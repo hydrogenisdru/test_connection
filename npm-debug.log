@@ -1,0 +1,677 @@
+0 info it worked if it ends with ok
+1 verbose cli [ '/usr/bin/nodejs', '/usr/bin/npm', 'install', 'md5' ]
+2 info using npm@1.3.10
+3 info using node@v0.10.25
+4 verbose cache add [ 'md5', null ]
+5 verbose cache add name=undefined spec="md5" args=["md5",null]
+6 verbose parsed url { protocol: null,
+6 verbose parsed url   slashes: null,
+6 verbose parsed url   auth: null,
+6 verbose parsed url   host: null,
+6 verbose parsed url   port: null,
+6 verbose parsed url   hostname: null,
+6 verbose parsed url   hash: null,
+6 verbose parsed url   search: null,
+6 verbose parsed url   query: null,
+6 verbose parsed url   pathname: 'md5',
+6 verbose parsed url   path: 'md5',
+6 verbose parsed url   href: 'md5' }
+7 silly lockFile c1ea94f7-md5 md5
+8 verbose lock md5 /home/hydrogen/.npm/c1ea94f7-md5.lock
+9 silly lockFile c1ea94f7-md5 md5
+10 silly lockFile c1ea94f7-md5 md5
+11 verbose addNamed [ 'md5', '' ]
+12 verbose addNamed [ null, '*' ]
+13 silly lockFile ab51ab6c-md5 md5@
+14 verbose lock md5@ /home/hydrogen/.npm/ab51ab6c-md5.lock
+15 silly addNameRange { name: 'md5', range: '*', hasData: false }
+16 verbose url raw md5
+17 verbose url resolving [ 'https://registry.npmjs.org/', './md5' ]
+18 verbose url resolved https://registry.npmjs.org/md5
+19 info trying registry request attempt 1 at 10:03:02
+20 http GET https://registry.npmjs.org/md5
+21 http 200 https://registry.npmjs.org/md5
+22 silly registry.get cb [ 200,
+22 silly registry.get   { server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
+22 silly registry.get     etag: '"DVY6L5RGR7OS15PQEDATYFHI1"',
+22 silly registry.get     'content-type': 'application/json',
+22 silly registry.get     'cache-control': 'max-age=300',
+22 silly registry.get     'content-length': '8695',
+22 silly registry.get     'accept-ranges': 'bytes',
+22 silly registry.get     date: 'Tue, 29 Mar 2016 02:03:07 GMT',
+22 silly registry.get     via: '1.1 varnish',
+22 silly registry.get     age: '0',
+22 silly registry.get     connection: 'keep-alive',
+22 silly registry.get     'x-served-by': 'cache-sin6924-SIN',
+22 silly registry.get     'x-cache': 'HIT',
+22 silly registry.get     'x-cache-hits': '1',
+22 silly registry.get     'x-timer': 'S1459216987.732670,VS0,VE214',
+22 silly registry.get     vary: 'Accept' } ]
+23 silly addNameRange number 2 { name: 'md5', range: '*', hasData: true }
+24 silly addNameRange versions [ 'md5', [ '1.0.1', '1.0.0', '2.0.0', '2.1.0' ] ]
+25 verbose addNamed [ 'md5', '2.1.0' ]
+26 verbose addNamed [ '2.1.0', '2.1.0' ]
+27 silly lockFile c18a4d26-md5-2-1-0 md5@2.1.0
+28 verbose lock md5@2.1.0 /home/hydrogen/.npm/c18a4d26-md5-2-1-0.lock
+29 silly lockFile 9459e9b4-stry-npmjs-org-md5-md5-2-1-0-tgz https://registry.npmjs.org/md5/-/md5-2.1.0.tgz
+30 verbose lock https://registry.npmjs.org/md5/-/md5-2.1.0.tgz /home/hydrogen/.npm/9459e9b4-stry-npmjs-org-md5-md5-2-1-0-tgz.lock
+31 verbose addRemoteTarball [ 'https://registry.npmjs.org/md5/-/md5-2.1.0.tgz',
+31 verbose addRemoteTarball   '22ec92f33ac97a6ef4dc16c0f57fa46c01ed13bb' ]
+32 info retry fetch attempt 1 at 10:03:09
+33 verbose fetch to= /home/hydrogen/tmp/npm-1990-WYAfXL2H/1459216989143-0.28111875941976905/tmp.tgz
+34 http GET https://registry.npmjs.org/md5/-/md5-2.1.0.tgz
+35 http 200 https://registry.npmjs.org/md5/-/md5-2.1.0.tgz
+36 verbose tar unpack /home/hydrogen/tmp/npm-1990-WYAfXL2H/1459216989143-0.28111875941976905/tmp.tgz
+37 silly lockFile 2e6ba87b-9143-0-28111875941976905-package tar:///home/hydrogen/tmp/npm-1990-WYAfXL2H/1459216989143-0.28111875941976905/package
+38 verbose lock tar:///home/hydrogen/tmp/npm-1990-WYAfXL2H/1459216989143-0.28111875941976905/package /home/hydrogen/.npm/2e6ba87b-9143-0-28111875941976905-package.lock
+39 silly lockFile dc46c7ae-9143-0-28111875941976905-tmp-tgz tar:///home/hydrogen/tmp/npm-1990-WYAfXL2H/1459216989143-0.28111875941976905/tmp.tgz
+40 verbose lock tar:///home/hydrogen/tmp/npm-1990-WYAfXL2H/1459216989143-0.28111875941976905/tmp.tgz /home/hydrogen/.npm/dc46c7ae-9143-0-28111875941976905-tmp-tgz.lock
+41 silly gunzTarPerm modes [ '755', '644' ]
+42 silly gunzTarPerm extractEntry package.json
+43 silly gunzTarPerm modified mode [ 'package.json', 438, 420 ]
+44 silly gunzTarPerm extractEntry .npmignore
+45 silly gunzTarPerm modified mode [ '.npmignore', 438, 420 ]
+46 silly gunzTarPerm extractEntry README.md
+47 silly gunzTarPerm modified mode [ 'README.md', 438, 420 ]
+48 silly gunzTarPerm extractEntry LICENSE
+49 silly gunzTarPerm modified mode [ 'LICENSE', 438, 420 ]
+50 silly gunzTarPerm extractEntry md5.js
+51 silly gunzTarPerm modified mode [ 'md5.js', 438, 420 ]
+52 silly gunzTarPerm extractEntry test.js
+53 silly gunzTarPerm modified mode [ 'test.js', 438, 420 ]
+54 silly gunzTarPerm extractEntry .travis.yml
+55 silly gunzTarPerm modified mode [ '.travis.yml', 438, 420 ]
+56 silly lockFile 2e6ba87b-9143-0-28111875941976905-package tar:///home/hydrogen/tmp/npm-1990-WYAfXL2H/1459216989143-0.28111875941976905/package
+57 silly lockFile 2e6ba87b-9143-0-28111875941976905-package tar:///home/hydrogen/tmp/npm-1990-WYAfXL2H/1459216989143-0.28111875941976905/package
+58 silly lockFile dc46c7ae-9143-0-28111875941976905-tmp-tgz tar:///home/hydrogen/tmp/npm-1990-WYAfXL2H/1459216989143-0.28111875941976905/tmp.tgz
+59 silly lockFile dc46c7ae-9143-0-28111875941976905-tmp-tgz tar:///home/hydrogen/tmp/npm-1990-WYAfXL2H/1459216989143-0.28111875941976905/tmp.tgz
+60 verbose tar pack [ '/home/hydrogen/.npm/md5/2.1.0/package.tgz',
+60 verbose tar pack   '/home/hydrogen/tmp/npm-1990-WYAfXL2H/1459216989143-0.28111875941976905/package' ]
+61 verbose tarball /home/hydrogen/.npm/md5/2.1.0/package.tgz
+62 verbose folder /home/hydrogen/tmp/npm-1990-WYAfXL2H/1459216989143-0.28111875941976905/package
+63 silly lockFile 2e6ba87b-9143-0-28111875941976905-package tar:///home/hydrogen/tmp/npm-1990-WYAfXL2H/1459216989143-0.28111875941976905/package
+64 verbose lock tar:///home/hydrogen/tmp/npm-1990-WYAfXL2H/1459216989143-0.28111875941976905/package /home/hydrogen/.npm/2e6ba87b-9143-0-28111875941976905-package.lock
+65 silly lockFile 562c8fe3-drogen-npm-md5-2-1-0-package-tgz tar:///home/hydrogen/.npm/md5/2.1.0/package.tgz
+66 verbose lock tar:///home/hydrogen/.npm/md5/2.1.0/package.tgz /home/hydrogen/.npm/562c8fe3-drogen-npm-md5-2-1-0-package-tgz.lock
+67 silly lockFile 2e6ba87b-9143-0-28111875941976905-package tar:///home/hydrogen/tmp/npm-1990-WYAfXL2H/1459216989143-0.28111875941976905/package
+68 silly lockFile 2e6ba87b-9143-0-28111875941976905-package tar:///home/hydrogen/tmp/npm-1990-WYAfXL2H/1459216989143-0.28111875941976905/package
+69 silly lockFile 562c8fe3-drogen-npm-md5-2-1-0-package-tgz tar:///home/hydrogen/.npm/md5/2.1.0/package.tgz
+70 silly lockFile 562c8fe3-drogen-npm-md5-2-1-0-package-tgz tar:///home/hydrogen/.npm/md5/2.1.0/package.tgz
+71 silly lockFile 1353daa2-e-hydrogen-npm-md5-2-1-0-package /home/hydrogen/.npm/md5/2.1.0/package
+72 verbose lock /home/hydrogen/.npm/md5/2.1.0/package /home/hydrogen/.npm/1353daa2-e-hydrogen-npm-md5-2-1-0-package.lock
+73 silly lockFile 1353daa2-e-hydrogen-npm-md5-2-1-0-package /home/hydrogen/.npm/md5/2.1.0/package
+74 silly lockFile 1353daa2-e-hydrogen-npm-md5-2-1-0-package /home/hydrogen/.npm/md5/2.1.0/package
+75 verbose tar unpack /home/hydrogen/.npm/md5/2.1.0/package.tgz
+76 silly lockFile d3103830-e-hydrogen-npm-md5-2-1-0-package tar:///home/hydrogen/.npm/md5/2.1.0/package
+77 verbose lock tar:///home/hydrogen/.npm/md5/2.1.0/package /home/hydrogen/.npm/d3103830-e-hydrogen-npm-md5-2-1-0-package.lock
+78 silly lockFile 562c8fe3-drogen-npm-md5-2-1-0-package-tgz tar:///home/hydrogen/.npm/md5/2.1.0/package.tgz
+79 verbose lock tar:///home/hydrogen/.npm/md5/2.1.0/package.tgz /home/hydrogen/.npm/562c8fe3-drogen-npm-md5-2-1-0-package-tgz.lock
+80 silly gunzTarPerm modes [ '755', '644' ]
+81 silly gunzTarPerm extractEntry package.json
+82 silly gunzTarPerm extractEntry .npmignore
+83 silly gunzTarPerm extractEntry README.md
+84 silly gunzTarPerm extractEntry LICENSE
+85 silly gunzTarPerm extractEntry md5.js
+86 silly gunzTarPerm extractEntry test.js
+87 silly gunzTarPerm extractEntry .travis.yml
+88 silly lockFile d3103830-e-hydrogen-npm-md5-2-1-0-package tar:///home/hydrogen/.npm/md5/2.1.0/package
+89 silly lockFile d3103830-e-hydrogen-npm-md5-2-1-0-package tar:///home/hydrogen/.npm/md5/2.1.0/package
+90 silly lockFile 562c8fe3-drogen-npm-md5-2-1-0-package-tgz tar:///home/hydrogen/.npm/md5/2.1.0/package.tgz
+91 silly lockFile 562c8fe3-drogen-npm-md5-2-1-0-package-tgz tar:///home/hydrogen/.npm/md5/2.1.0/package.tgz
+92 verbose chmod /home/hydrogen/.npm/md5/2.1.0/package.tgz 644
+93 verbose chown /home/hydrogen/.npm/md5/2.1.0/package.tgz [ 1000, 1000 ]
+94 silly lockFile 9459e9b4-stry-npmjs-org-md5-md5-2-1-0-tgz https://registry.npmjs.org/md5/-/md5-2.1.0.tgz
+95 silly lockFile 9459e9b4-stry-npmjs-org-md5-md5-2-1-0-tgz https://registry.npmjs.org/md5/-/md5-2.1.0.tgz
+96 silly lockFile c18a4d26-md5-2-1-0 md5@2.1.0
+97 silly lockFile c18a4d26-md5-2-1-0 md5@2.1.0
+98 silly lockFile ab51ab6c-md5 md5@
+99 silly lockFile ab51ab6c-md5 md5@
+100 silly resolved [ { name: 'md5',
+100 silly resolved     description: 'js function for hashing messages with MD5',
+100 silly resolved     version: '2.1.0',
+100 silly resolved     author:
+100 silly resolved      { name: 'Paul Vorbach',
+100 silly resolved        email: 'paul@vorba.ch',
+100 silly resolved        url: 'http://paul.vorba.ch' },
+100 silly resolved     contributors: [ [Object] ],
+100 silly resolved     tags: [ 'md5', 'hash', 'encryption', 'message digest' ],
+100 silly resolved     repository: { type: 'git', url: 'git://github.com/pvorb/node-md5.git' },
+100 silly resolved     bugs: { url: 'https://github.com/pvorb/node-md5/issues' },
+100 silly resolved     main: 'md5.js',
+100 silly resolved     scripts: { test: 'mocha' },
+100 silly resolved     dependencies: { charenc: '~0.0.1', crypt: '~0.0.1', 'is-buffer': '~1.1.1' },
+100 silly resolved     devDependencies: { mocha: '~2.3.4' },
+100 silly resolved     optionalDependencies: {},
+100 silly resolved     license: 'BSD-3-Clause',
+100 silly resolved     readme: '# MD5\n\n[![build status](https://secure.travis-ci.org/pvorb/node-md5.png)](http://travis-ci.org/pvorb/node-md5)\n\na JavaScript function for hashing messages with MD5.\n\n## Installation\n\nYou can use this package on the server side as well as the client side.\n\n### [Node.js](http://nodejs.org/):\n\n~~~\nnpm install md5\n~~~\n\n\n## API\n\n~~~ javascript\nmd5(message)\n~~~\n\n  * `message` -- `String` or `Buffer`\n  * returns `String`\n\n\n## Usage\n\n~~~ javascript\nvar md5 = require(\'md5\');\n\nconsole.log(md5(\'message\'));\n~~~\n\nThis will print the following\n\n~~~\n78e731027d8fd50ed642340b7c9a63b3\n~~~\n\nIt supports buffers, too\n\n~~~ javascript\nvar fs = require(\'fs\');\nvar md5 = require(\'md5\');\n\nfs.readFile(\'example.txt\', function(err, buf) {\n  console.log(md5(buf));\n});\n~~~\n\n## Versions\n\nBefore version 2.0.0 there were two packages called md5 on npm, one lowercase,\none uppercase (the one you\'re looking at). As of version 2.0.0, all new versions\nof this module will go to lowercase [md5](https://www.npmjs.com/package/md5) on\nnpm. To use the correct version, users of this module will have to change their\ncode from `require(\'MD5\')` to `require(\'md5\')` if they want to use versions >=\n2.0.0.\n\n\n## Bugs and Issues\n\nIf you encounter any bugs or issues, feel free to open an issue at\n[github](https://github.com/pvorb/node-md5/issues).\n\n\n## Credits\n\nThis package is based on the work of Jeff Mott, who did a pure JS implementation\nof the MD5 algorithm that was published by Ronald L. Rivest in 1991. I needed a\nnpm package of the algorithm, so I used Jeff’s implementation for this package.\nThe original implementation can be found in the\n[CryptoJS](http://code.google.com/p/crypto-js/) project.\n\n\n## License\n\n~~~\nCopyright © 2011-2015, Paul Vorbach.\nCopyright © 2009, Jeff Mott.\n\nAll rights reserved.\n\nRedistribution and use in source and binary forms, with or without modification,\nare permitted provided that the following conditions are met:\n\n* Redistributions of source code must retain the above copyright notice, this\n  list of conditions and the following disclaimer.\n* Redistributions in binary form must reproduce the above copyright notice, this\n  list of conditions and the following disclaimer in the documentation and/or\n  other materials provided with the distribution.\n* Neither the name Crypto-JS nor the names of its contributors may be used to\n  endorse or promote products derived from this software without specific prior\n  written permission.\n\nTHIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND\nANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED\nWARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE\nDISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE FOR\nANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES\n(INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;\nLOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON\nANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT\n(INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS\nSOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.\n~~~\n',
+100 silly resolved     readmeFilename: 'README.md',
+100 silly resolved     _id: 'md5@2.1.0',
+100 silly resolved     dist: { shasum: '88cf0854278d5af4534f1371ed5acaf0cdf04107' },
+100 silly resolved     _from: 'md5@',
+100 silly resolved     _resolved: 'https://registry.npmjs.org/md5/-/md5-2.1.0.tgz' } ]
+101 info install md5@2.1.0 into /home/hydrogen
+102 info installOne md5@2.1.0
+103 info /home/hydrogen/node_modules/md5 unbuild
+104 verbose tar unpack /home/hydrogen/.npm/md5/2.1.0/package.tgz
+105 silly lockFile 93159342-r-home-hydrogen-node-modules-md5 tar:///home/hydrogen/node_modules/md5
+106 verbose lock tar:///home/hydrogen/node_modules/md5 /home/hydrogen/.npm/93159342-r-home-hydrogen-node-modules-md5.lock
+107 silly lockFile 562c8fe3-drogen-npm-md5-2-1-0-package-tgz tar:///home/hydrogen/.npm/md5/2.1.0/package.tgz
+108 verbose lock tar:///home/hydrogen/.npm/md5/2.1.0/package.tgz /home/hydrogen/.npm/562c8fe3-drogen-npm-md5-2-1-0-package-tgz.lock
+109 silly gunzTarPerm modes [ '755', '644' ]
+110 silly gunzTarPerm extractEntry package.json
+111 silly gunzTarPerm extractEntry .npmignore
+112 silly gunzTarPerm extractEntry README.md
+113 silly gunzTarPerm extractEntry LICENSE
+114 silly gunzTarPerm extractEntry md5.js
+115 silly gunzTarPerm extractEntry test.js
+116 silly gunzTarPerm extractEntry .travis.yml
+117 silly lockFile 93159342-r-home-hydrogen-node-modules-md5 tar:///home/hydrogen/node_modules/md5
+118 silly lockFile 93159342-r-home-hydrogen-node-modules-md5 tar:///home/hydrogen/node_modules/md5
+119 silly lockFile 562c8fe3-drogen-npm-md5-2-1-0-package-tgz tar:///home/hydrogen/.npm/md5/2.1.0/package.tgz
+120 silly lockFile 562c8fe3-drogen-npm-md5-2-1-0-package-tgz tar:///home/hydrogen/.npm/md5/2.1.0/package.tgz
+121 info preinstall md5@2.1.0
+122 verbose readDependencies using package.json deps
+123 verbose readDependencies using package.json deps
+124 verbose cache add [ 'charenc@~0.0.1', null ]
+125 verbose cache add name=undefined spec="charenc@~0.0.1" args=["charenc@~0.0.1",null]
+126 verbose parsed url { protocol: null,
+126 verbose parsed url   slashes: null,
+126 verbose parsed url   auth: null,
+126 verbose parsed url   host: null,
+126 verbose parsed url   port: null,
+126 verbose parsed url   hostname: null,
+126 verbose parsed url   hash: null,
+126 verbose parsed url   search: null,
+126 verbose parsed url   query: null,
+126 verbose parsed url   pathname: 'charenc@~0.0.1',
+126 verbose parsed url   path: 'charenc@~0.0.1',
+126 verbose parsed url   href: 'charenc@~0.0.1' }
+127 verbose cache add name="charenc" spec="~0.0.1" args=["charenc","~0.0.1"]
+128 verbose parsed url { protocol: null,
+128 verbose parsed url   slashes: null,
+128 verbose parsed url   auth: null,
+128 verbose parsed url   host: null,
+128 verbose parsed url   port: null,
+128 verbose parsed url   hostname: null,
+128 verbose parsed url   hash: null,
+128 verbose parsed url   search: null,
+128 verbose parsed url   query: null,
+128 verbose parsed url   pathname: '~0.0.1',
+128 verbose parsed url   path: '~0.0.1',
+128 verbose parsed url   href: '~0.0.1' }
+129 verbose addNamed [ 'charenc', '~0.0.1' ]
+130 verbose addNamed [ null, '>=0.0.1-0 <0.1.0-0' ]
+131 silly lockFile ce54f5d2-charenc-0-0-1 charenc@~0.0.1
+132 verbose lock charenc@~0.0.1 /home/hydrogen/.npm/ce54f5d2-charenc-0-0-1.lock
+133 verbose cache add [ 'crypt@~0.0.1', null ]
+134 verbose cache add name=undefined spec="crypt@~0.0.1" args=["crypt@~0.0.1",null]
+135 verbose parsed url { protocol: null,
+135 verbose parsed url   slashes: null,
+135 verbose parsed url   auth: null,
+135 verbose parsed url   host: null,
+135 verbose parsed url   port: null,
+135 verbose parsed url   hostname: null,
+135 verbose parsed url   hash: null,
+135 verbose parsed url   search: null,
+135 verbose parsed url   query: null,
+135 verbose parsed url   pathname: 'crypt@~0.0.1',
+135 verbose parsed url   path: 'crypt@~0.0.1',
+135 verbose parsed url   href: 'crypt@~0.0.1' }
+136 verbose cache add name="crypt" spec="~0.0.1" args=["crypt","~0.0.1"]
+137 verbose parsed url { protocol: null,
+137 verbose parsed url   slashes: null,
+137 verbose parsed url   auth: null,
+137 verbose parsed url   host: null,
+137 verbose parsed url   port: null,
+137 verbose parsed url   hostname: null,
+137 verbose parsed url   hash: null,
+137 verbose parsed url   search: null,
+137 verbose parsed url   query: null,
+137 verbose parsed url   pathname: '~0.0.1',
+137 verbose parsed url   path: '~0.0.1',
+137 verbose parsed url   href: '~0.0.1' }
+138 verbose addNamed [ 'crypt', '~0.0.1' ]
+139 verbose addNamed [ null, '>=0.0.1-0 <0.1.0-0' ]
+140 silly lockFile af0ccb15-crypt-0-0-1 crypt@~0.0.1
+141 verbose lock crypt@~0.0.1 /home/hydrogen/.npm/af0ccb15-crypt-0-0-1.lock
+142 verbose cache add [ 'is-buffer@~1.1.1', null ]
+143 verbose cache add name=undefined spec="is-buffer@~1.1.1" args=["is-buffer@~1.1.1",null]
+144 verbose parsed url { protocol: null,
+144 verbose parsed url   slashes: null,
+144 verbose parsed url   auth: null,
+144 verbose parsed url   host: null,
+144 verbose parsed url   port: null,
+144 verbose parsed url   hostname: null,
+144 verbose parsed url   hash: null,
+144 verbose parsed url   search: null,
+144 verbose parsed url   query: null,
+144 verbose parsed url   pathname: 'is-buffer@~1.1.1',
+144 verbose parsed url   path: 'is-buffer@~1.1.1',
+144 verbose parsed url   href: 'is-buffer@~1.1.1' }
+145 verbose cache add name="is-buffer" spec="~1.1.1" args=["is-buffer","~1.1.1"]
+146 verbose parsed url { protocol: null,
+146 verbose parsed url   slashes: null,
+146 verbose parsed url   auth: null,
+146 verbose parsed url   host: null,
+146 verbose parsed url   port: null,
+146 verbose parsed url   hostname: null,
+146 verbose parsed url   hash: null,
+146 verbose parsed url   search: null,
+146 verbose parsed url   query: null,
+146 verbose parsed url   pathname: '~1.1.1',
+146 verbose parsed url   path: '~1.1.1',
+146 verbose parsed url   href: '~1.1.1' }
+147 verbose addNamed [ 'is-buffer', '~1.1.1' ]
+148 verbose addNamed [ null, '>=1.1.1-0 <1.2.0-0' ]
+149 silly lockFile fca37c7c-is-buffer-1-1-1 is-buffer@~1.1.1
+150 verbose lock is-buffer@~1.1.1 /home/hydrogen/.npm/fca37c7c-is-buffer-1-1-1.lock
+151 silly addNameRange { name: 'charenc', range: '>=0.0.1-0 <0.1.0-0', hasData: false }
+152 silly addNameRange { name: 'crypt', range: '>=0.0.1-0 <0.1.0-0', hasData: false }
+153 verbose url raw charenc
+154 verbose url resolving [ 'https://registry.npmjs.org/', './charenc' ]
+155 verbose url resolved https://registry.npmjs.org/charenc
+156 info trying registry request attempt 1 at 10:03:14
+157 http GET https://registry.npmjs.org/charenc
+158 verbose url raw crypt
+159 verbose url resolving [ 'https://registry.npmjs.org/', './crypt' ]
+160 verbose url resolved https://registry.npmjs.org/crypt
+161 info trying registry request attempt 1 at 10:03:14
+162 http GET https://registry.npmjs.org/crypt
+163 silly addNameRange { name: 'is-buffer',
+163 silly addNameRange   range: '>=1.1.1-0 <1.2.0-0',
+163 silly addNameRange   hasData: false }
+164 verbose url raw is-buffer
+165 verbose url resolving [ 'https://registry.npmjs.org/', './is-buffer' ]
+166 verbose url resolved https://registry.npmjs.org/is-buffer
+167 info trying registry request attempt 1 at 10:03:14
+168 verbose etag "307M85SGF48SDNFKWO1ACHF1L"
+169 http GET https://registry.npmjs.org/is-buffer
+170 http 200 https://registry.npmjs.org/charenc
+171 silly registry.get cb [ 200,
+171 silly registry.get   { server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
+171 silly registry.get     etag: '"56QWGF6L07H5HVAFRB2ZA83YH"',
+171 silly registry.get     'content-type': 'application/json',
+171 silly registry.get     'cache-control': 'max-age=300',
+171 silly registry.get     'content-length': '2266',
+171 silly registry.get     'accept-ranges': 'bytes',
+171 silly registry.get     date: 'Tue, 29 Mar 2016 02:03:14 GMT',
+171 silly registry.get     via: '1.1 varnish',
+171 silly registry.get     age: '0',
+171 silly registry.get     connection: 'keep-alive',
+171 silly registry.get     'x-served-by': 'cache-sin6922-SIN',
+171 silly registry.get     'x-cache': 'HIT',
+171 silly registry.get     'x-cache-hits': '1',
+171 silly registry.get     'x-timer': 'S1459216994.010550,VS0,VE208',
+171 silly registry.get     vary: 'Accept' } ]
+172 silly addNameRange number 2 { name: 'charenc', range: '>=0.0.1-0 <0.1.0-0', hasData: true }
+173 silly addNameRange versions [ 'charenc', [ '0.0.0', '0.0.1' ] ]
+174 verbose addNamed [ 'charenc', '0.0.1' ]
+175 verbose addNamed [ '0.0.1', '0.0.1' ]
+176 silly lockFile 6d04ea09-charenc-0-0-1 charenc@0.0.1
+177 verbose lock charenc@0.0.1 /home/hydrogen/.npm/6d04ea09-charenc-0-0-1.lock
+178 silly lockFile a5ff2df3-js-org-charenc-charenc-0-0-1-tgz https://registry.npmjs.org/charenc/-/charenc-0.0.1.tgz
+179 verbose lock https://registry.npmjs.org/charenc/-/charenc-0.0.1.tgz /home/hydrogen/.npm/a5ff2df3-js-org-charenc-charenc-0-0-1-tgz.lock
+180 verbose addRemoteTarball [ 'https://registry.npmjs.org/charenc/-/charenc-0.0.1.tgz',
+180 verbose addRemoteTarball   '004cff9feaf102382ed12db58dd6f962796d6e88' ]
+181 info retry fetch attempt 1 at 10:03:15
+182 verbose fetch to= /home/hydrogen/tmp/npm-1990-WYAfXL2H/1459216995379-0.5562081739772111/tmp.tgz
+183 http GET https://registry.npmjs.org/charenc/-/charenc-0.0.1.tgz
+184 http 200 https://registry.npmjs.org/charenc/-/charenc-0.0.1.tgz
+185 verbose tar unpack /home/hydrogen/tmp/npm-1990-WYAfXL2H/1459216995379-0.5562081739772111/tmp.tgz
+186 silly lockFile 302eebfe-95379-0-5562081739772111-package tar:///home/hydrogen/tmp/npm-1990-WYAfXL2H/1459216995379-0.5562081739772111/package
+187 verbose lock tar:///home/hydrogen/tmp/npm-1990-WYAfXL2H/1459216995379-0.5562081739772111/package /home/hydrogen/.npm/302eebfe-95379-0-5562081739772111-package.lock
+188 silly lockFile f8fb33c2-95379-0-5562081739772111-tmp-tgz tar:///home/hydrogen/tmp/npm-1990-WYAfXL2H/1459216995379-0.5562081739772111/tmp.tgz
+189 verbose lock tar:///home/hydrogen/tmp/npm-1990-WYAfXL2H/1459216995379-0.5562081739772111/tmp.tgz /home/hydrogen/.npm/f8fb33c2-95379-0-5562081739772111-tmp-tgz.lock
+190 silly gunzTarPerm modes [ '755', '644' ]
+191 silly gunzTarPerm extractEntry charenc.js
+192 silly gunzTarPerm extractEntry package.json
+193 silly gunzTarPerm extractEntry LICENSE.mkd
+194 silly gunzTarPerm extractEntry README.js
+195 silly lockFile 302eebfe-95379-0-5562081739772111-package tar:///home/hydrogen/tmp/npm-1990-WYAfXL2H/1459216995379-0.5562081739772111/package
+196 silly lockFile 302eebfe-95379-0-5562081739772111-package tar:///home/hydrogen/tmp/npm-1990-WYAfXL2H/1459216995379-0.5562081739772111/package
+197 silly lockFile f8fb33c2-95379-0-5562081739772111-tmp-tgz tar:///home/hydrogen/tmp/npm-1990-WYAfXL2H/1459216995379-0.5562081739772111/tmp.tgz
+198 silly lockFile f8fb33c2-95379-0-5562081739772111-tmp-tgz tar:///home/hydrogen/tmp/npm-1990-WYAfXL2H/1459216995379-0.5562081739772111/tmp.tgz
+199 verbose tar pack [ '/home/hydrogen/.npm/charenc/0.0.1/package.tgz',
+199 verbose tar pack   '/home/hydrogen/tmp/npm-1990-WYAfXL2H/1459216995379-0.5562081739772111/package' ]
+200 verbose tarball /home/hydrogen/.npm/charenc/0.0.1/package.tgz
+201 verbose folder /home/hydrogen/tmp/npm-1990-WYAfXL2H/1459216995379-0.5562081739772111/package
+202 silly lockFile 302eebfe-95379-0-5562081739772111-package tar:///home/hydrogen/tmp/npm-1990-WYAfXL2H/1459216995379-0.5562081739772111/package
+203 verbose lock tar:///home/hydrogen/tmp/npm-1990-WYAfXL2H/1459216995379-0.5562081739772111/package /home/hydrogen/.npm/302eebfe-95379-0-5562081739772111-package.lock
+204 silly lockFile be0c7342-en-npm-charenc-0-0-1-package-tgz tar:///home/hydrogen/.npm/charenc/0.0.1/package.tgz
+205 verbose lock tar:///home/hydrogen/.npm/charenc/0.0.1/package.tgz /home/hydrogen/.npm/be0c7342-en-npm-charenc-0-0-1-package-tgz.lock
+206 silly lockFile 302eebfe-95379-0-5562081739772111-package tar:///home/hydrogen/tmp/npm-1990-WYAfXL2H/1459216995379-0.5562081739772111/package
+207 silly lockFile 302eebfe-95379-0-5562081739772111-package tar:///home/hydrogen/tmp/npm-1990-WYAfXL2H/1459216995379-0.5562081739772111/package
+208 silly lockFile be0c7342-en-npm-charenc-0-0-1-package-tgz tar:///home/hydrogen/.npm/charenc/0.0.1/package.tgz
+209 silly lockFile be0c7342-en-npm-charenc-0-0-1-package-tgz tar:///home/hydrogen/.npm/charenc/0.0.1/package.tgz
+210 silly lockFile 8df0c852-drogen-npm-charenc-0-0-1-package /home/hydrogen/.npm/charenc/0.0.1/package
+211 verbose lock /home/hydrogen/.npm/charenc/0.0.1/package /home/hydrogen/.npm/8df0c852-drogen-npm-charenc-0-0-1-package.lock
+212 silly lockFile 8df0c852-drogen-npm-charenc-0-0-1-package /home/hydrogen/.npm/charenc/0.0.1/package
+213 silly lockFile 8df0c852-drogen-npm-charenc-0-0-1-package /home/hydrogen/.npm/charenc/0.0.1/package
+214 verbose tar unpack /home/hydrogen/.npm/charenc/0.0.1/package.tgz
+215 silly lockFile 8bfb1ba2-drogen-npm-charenc-0-0-1-package tar:///home/hydrogen/.npm/charenc/0.0.1/package
+216 verbose lock tar:///home/hydrogen/.npm/charenc/0.0.1/package /home/hydrogen/.npm/8bfb1ba2-drogen-npm-charenc-0-0-1-package.lock
+217 silly lockFile be0c7342-en-npm-charenc-0-0-1-package-tgz tar:///home/hydrogen/.npm/charenc/0.0.1/package.tgz
+218 verbose lock tar:///home/hydrogen/.npm/charenc/0.0.1/package.tgz /home/hydrogen/.npm/be0c7342-en-npm-charenc-0-0-1-package-tgz.lock
+219 silly gunzTarPerm modes [ '755', '644' ]
+220 silly gunzTarPerm extractEntry package.json
+221 silly gunzTarPerm extractEntry README.js
+222 silly gunzTarPerm extractEntry charenc.js
+223 silly gunzTarPerm extractEntry LICENSE.mkd
+224 silly lockFile 8bfb1ba2-drogen-npm-charenc-0-0-1-package tar:///home/hydrogen/.npm/charenc/0.0.1/package
+225 silly lockFile 8bfb1ba2-drogen-npm-charenc-0-0-1-package tar:///home/hydrogen/.npm/charenc/0.0.1/package
+226 silly lockFile be0c7342-en-npm-charenc-0-0-1-package-tgz tar:///home/hydrogen/.npm/charenc/0.0.1/package.tgz
+227 silly lockFile be0c7342-en-npm-charenc-0-0-1-package-tgz tar:///home/hydrogen/.npm/charenc/0.0.1/package.tgz
+228 verbose chmod /home/hydrogen/.npm/charenc/0.0.1/package.tgz 644
+229 verbose chown /home/hydrogen/.npm/charenc/0.0.1/package.tgz [ 1000, 1000 ]
+230 silly lockFile a5ff2df3-js-org-charenc-charenc-0-0-1-tgz https://registry.npmjs.org/charenc/-/charenc-0.0.1.tgz
+231 silly lockFile a5ff2df3-js-org-charenc-charenc-0-0-1-tgz https://registry.npmjs.org/charenc/-/charenc-0.0.1.tgz
+232 silly lockFile 6d04ea09-charenc-0-0-1 charenc@0.0.1
+233 silly lockFile 6d04ea09-charenc-0-0-1 charenc@0.0.1
+234 silly lockFile ce54f5d2-charenc-0-0-1 charenc@~0.0.1
+235 silly lockFile ce54f5d2-charenc-0-0-1 charenc@~0.0.1
+236 http 200 https://registry.npmjs.org/crypt
+237 silly registry.get cb [ 200,
+237 silly registry.get   { server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
+237 silly registry.get     etag: '"B1RL9UCH6KDV192TWV14KI8AX"',
+237 silly registry.get     'content-type': 'application/json',
+237 silly registry.get     'cache-control': 'max-age=300',
+237 silly registry.get     'content-length': '2225',
+237 silly registry.get     'accept-ranges': 'bytes',
+237 silly registry.get     date: 'Tue, 29 Mar 2016 02:03:15 GMT',
+237 silly registry.get     via: '1.1 varnish',
+237 silly registry.get     age: '0',
+237 silly registry.get     connection: 'keep-alive',
+237 silly registry.get     'x-served-by': 'cache-sin6925-SIN',
+237 silly registry.get     'x-cache': 'HIT',
+237 silly registry.get     'x-cache-hits': '1',
+237 silly registry.get     'x-timer': 'S1459216994.070465,VS0,VE964',
+237 silly registry.get     vary: 'Accept' } ]
+238 silly addNameRange number 2 { name: 'crypt', range: '>=0.0.1-0 <0.1.0-0', hasData: true }
+239 silly addNameRange versions [ 'crypt', [ '0.0.0', '0.0.1' ] ]
+240 verbose addNamed [ 'crypt', '0.0.1' ]
+241 verbose addNamed [ '0.0.1', '0.0.1' ]
+242 silly lockFile 8d28c609-crypt-0-0-1 crypt@0.0.1
+243 verbose lock crypt@0.0.1 /home/hydrogen/.npm/8d28c609-crypt-0-0-1.lock
+244 silly lockFile c9c60585--npmjs-org-crypt-crypt-0-0-1-tgz https://registry.npmjs.org/crypt/-/crypt-0.0.1.tgz
+245 verbose lock https://registry.npmjs.org/crypt/-/crypt-0.0.1.tgz /home/hydrogen/.npm/c9c60585--npmjs-org-crypt-crypt-0-0-1-tgz.lock
+246 verbose addRemoteTarball [ 'https://registry.npmjs.org/crypt/-/crypt-0.0.1.tgz',
+246 verbose addRemoteTarball   '5f11b21a6c05ef1b5e79708366da6374ece1e6a2' ]
+247 info retry fetch attempt 1 at 10:03:16
+248 verbose fetch to= /home/hydrogen/tmp/npm-1990-WYAfXL2H/1459216996197-0.009322655387222767/tmp.tgz
+249 http GET https://registry.npmjs.org/crypt/-/crypt-0.0.1.tgz
+250 http 200 https://registry.npmjs.org/crypt/-/crypt-0.0.1.tgz
+251 verbose tar unpack /home/hydrogen/tmp/npm-1990-WYAfXL2H/1459216996197-0.009322655387222767/tmp.tgz
+252 silly lockFile fa096320-197-0-009322655387222767-package tar:///home/hydrogen/tmp/npm-1990-WYAfXL2H/1459216996197-0.009322655387222767/package
+253 verbose lock tar:///home/hydrogen/tmp/npm-1990-WYAfXL2H/1459216996197-0.009322655387222767/package /home/hydrogen/.npm/fa096320-197-0-009322655387222767-package.lock
+254 silly lockFile 3f95b9ac-197-0-009322655387222767-tmp-tgz tar:///home/hydrogen/tmp/npm-1990-WYAfXL2H/1459216996197-0.009322655387222767/tmp.tgz
+255 verbose lock tar:///home/hydrogen/tmp/npm-1990-WYAfXL2H/1459216996197-0.009322655387222767/tmp.tgz /home/hydrogen/.npm/3f95b9ac-197-0-009322655387222767-tmp-tgz.lock
+256 silly gunzTarPerm modes [ '755', '644' ]
+257 silly gunzTarPerm extractEntry crypt.js
+258 silly gunzTarPerm extractEntry README.mkd
+259 silly gunzTarPerm extractEntry package.json
+260 silly gunzTarPerm extractEntry LICENSE.mkd
+261 silly lockFile fa096320-197-0-009322655387222767-package tar:///home/hydrogen/tmp/npm-1990-WYAfXL2H/1459216996197-0.009322655387222767/package
+262 silly lockFile fa096320-197-0-009322655387222767-package tar:///home/hydrogen/tmp/npm-1990-WYAfXL2H/1459216996197-0.009322655387222767/package
+263 silly lockFile 3f95b9ac-197-0-009322655387222767-tmp-tgz tar:///home/hydrogen/tmp/npm-1990-WYAfXL2H/1459216996197-0.009322655387222767/tmp.tgz
+264 silly lockFile 3f95b9ac-197-0-009322655387222767-tmp-tgz tar:///home/hydrogen/tmp/npm-1990-WYAfXL2H/1459216996197-0.009322655387222767/tmp.tgz
+265 verbose tar pack [ '/home/hydrogen/.npm/crypt/0.0.1/package.tgz',
+265 verbose tar pack   '/home/hydrogen/tmp/npm-1990-WYAfXL2H/1459216996197-0.009322655387222767/package' ]
+266 verbose tarball /home/hydrogen/.npm/crypt/0.0.1/package.tgz
+267 verbose folder /home/hydrogen/tmp/npm-1990-WYAfXL2H/1459216996197-0.009322655387222767/package
+268 silly lockFile fa096320-197-0-009322655387222767-package tar:///home/hydrogen/tmp/npm-1990-WYAfXL2H/1459216996197-0.009322655387222767/package
+269 verbose lock tar:///home/hydrogen/tmp/npm-1990-WYAfXL2H/1459216996197-0.009322655387222767/package /home/hydrogen/.npm/fa096320-197-0-009322655387222767-package.lock
+270 silly lockFile d4dd2387-ogen-npm-crypt-0-0-1-package-tgz tar:///home/hydrogen/.npm/crypt/0.0.1/package.tgz
+271 verbose lock tar:///home/hydrogen/.npm/crypt/0.0.1/package.tgz /home/hydrogen/.npm/d4dd2387-ogen-npm-crypt-0-0-1-package-tgz.lock
+272 silly lockFile fa096320-197-0-009322655387222767-package tar:///home/hydrogen/tmp/npm-1990-WYAfXL2H/1459216996197-0.009322655387222767/package
+273 silly lockFile fa096320-197-0-009322655387222767-package tar:///home/hydrogen/tmp/npm-1990-WYAfXL2H/1459216996197-0.009322655387222767/package
+274 silly lockFile d4dd2387-ogen-npm-crypt-0-0-1-package-tgz tar:///home/hydrogen/.npm/crypt/0.0.1/package.tgz
+275 silly lockFile d4dd2387-ogen-npm-crypt-0-0-1-package-tgz tar:///home/hydrogen/.npm/crypt/0.0.1/package.tgz
+276 silly lockFile 0744c604-hydrogen-npm-crypt-0-0-1-package /home/hydrogen/.npm/crypt/0.0.1/package
+277 verbose lock /home/hydrogen/.npm/crypt/0.0.1/package /home/hydrogen/.npm/0744c604-hydrogen-npm-crypt-0-0-1-package.lock
+278 silly lockFile 0744c604-hydrogen-npm-crypt-0-0-1-package /home/hydrogen/.npm/crypt/0.0.1/package
+279 silly lockFile 0744c604-hydrogen-npm-crypt-0-0-1-package /home/hydrogen/.npm/crypt/0.0.1/package
+280 verbose tar unpack /home/hydrogen/.npm/crypt/0.0.1/package.tgz
+281 silly lockFile c38b0642-hydrogen-npm-crypt-0-0-1-package tar:///home/hydrogen/.npm/crypt/0.0.1/package
+282 verbose lock tar:///home/hydrogen/.npm/crypt/0.0.1/package /home/hydrogen/.npm/c38b0642-hydrogen-npm-crypt-0-0-1-package.lock
+283 silly lockFile d4dd2387-ogen-npm-crypt-0-0-1-package-tgz tar:///home/hydrogen/.npm/crypt/0.0.1/package.tgz
+284 verbose lock tar:///home/hydrogen/.npm/crypt/0.0.1/package.tgz /home/hydrogen/.npm/d4dd2387-ogen-npm-crypt-0-0-1-package-tgz.lock
+285 silly gunzTarPerm modes [ '755', '644' ]
+286 silly gunzTarPerm extractEntry package.json
+287 silly gunzTarPerm extractEntry crypt.js
+288 silly gunzTarPerm extractEntry LICENSE.mkd
+289 silly gunzTarPerm extractEntry README.mkd
+290 silly lockFile c38b0642-hydrogen-npm-crypt-0-0-1-package tar:///home/hydrogen/.npm/crypt/0.0.1/package
+291 silly lockFile c38b0642-hydrogen-npm-crypt-0-0-1-package tar:///home/hydrogen/.npm/crypt/0.0.1/package
+292 silly lockFile d4dd2387-ogen-npm-crypt-0-0-1-package-tgz tar:///home/hydrogen/.npm/crypt/0.0.1/package.tgz
+293 silly lockFile d4dd2387-ogen-npm-crypt-0-0-1-package-tgz tar:///home/hydrogen/.npm/crypt/0.0.1/package.tgz
+294 verbose chmod /home/hydrogen/.npm/crypt/0.0.1/package.tgz 644
+295 verbose chown /home/hydrogen/.npm/crypt/0.0.1/package.tgz [ 1000, 1000 ]
+296 silly lockFile c9c60585--npmjs-org-crypt-crypt-0-0-1-tgz https://registry.npmjs.org/crypt/-/crypt-0.0.1.tgz
+297 silly lockFile c9c60585--npmjs-org-crypt-crypt-0-0-1-tgz https://registry.npmjs.org/crypt/-/crypt-0.0.1.tgz
+298 silly lockFile 8d28c609-crypt-0-0-1 crypt@0.0.1
+299 silly lockFile 8d28c609-crypt-0-0-1 crypt@0.0.1
+300 silly lockFile af0ccb15-crypt-0-0-1 crypt@~0.0.1
+301 silly lockFile af0ccb15-crypt-0-0-1 crypt@~0.0.1
+302 http 304 https://registry.npmjs.org/is-buffer
+303 silly registry.get cb [ 304,
+303 silly registry.get   { date: 'Tue, 29 Mar 2016 02:03:18 GMT',
+303 silly registry.get     via: '1.1 varnish',
+303 silly registry.get     'cache-control': 'max-age=300',
+303 silly registry.get     etag: '"307M85SGF48SDNFKWO1ACHF1L"',
+303 silly registry.get     age: '266',
+303 silly registry.get     connection: 'keep-alive',
+303 silly registry.get     'x-served-by': 'cache-sin6924-SIN',
+303 silly registry.get     'x-cache': 'HIT',
+303 silly registry.get     'x-cache-hits': '9',
+303 silly registry.get     'x-timer': 'S1459216998.977871,VS0,VE0',
+303 silly registry.get     vary: 'Accept' } ]
+304 verbose etag is-buffer from cache
+305 silly addNameRange number 2 { name: 'is-buffer', range: '>=1.1.1-0 <1.2.0-0', hasData: true }
+306 silly addNameRange versions [ 'is-buffer',
+306 silly addNameRange   [ '1.0.0', '1.0.1', '1.0.2', '1.1.0', '1.1.1', '1.1.2', '1.1.3' ] ]
+307 verbose addNamed [ 'is-buffer', '1.1.3' ]
+308 verbose addNamed [ '1.1.3', '1.1.3' ]
+309 silly lockFile 7bb2e33a-is-buffer-1-1-3 is-buffer@1.1.3
+310 verbose lock is-buffer@1.1.3 /home/hydrogen/.npm/7bb2e33a-is-buffer-1-1-3.lock
+311 silly lockFile 7bb2e33a-is-buffer-1-1-3 is-buffer@1.1.3
+312 silly lockFile 7bb2e33a-is-buffer-1-1-3 is-buffer@1.1.3
+313 silly lockFile fca37c7c-is-buffer-1-1-1 is-buffer@~1.1.1
+314 silly lockFile fca37c7c-is-buffer-1-1-1 is-buffer@~1.1.1
+315 silly resolved [ { author:
+315 silly resolved      { name: 'Paul Vorbach',
+315 silly resolved        email: 'paul@vorb.de',
+315 silly resolved        url: 'http://vorb.de' },
+315 silly resolved     name: 'charenc',
+315 silly resolved     description: 'character encoding utilities',
+315 silly resolved     tags: [ 'utf8', 'binary', 'byte', 'string' ],
+315 silly resolved     version: '0.0.1',
+315 silly resolved     repository: { type: 'git', url: 'git://github.com/pvorb/node-charenc.git' },
+315 silly resolved     bugs: { url: 'https://github.com/pvorb/node-charenc/issues' },
+315 silly resolved     main: 'charenc.js',
+315 silly resolved     engines: { node: '*' },
+315 silly resolved     readme: '**enc** provides crypto character encoding utilities.\n',
+315 silly resolved     readmeFilename: 'README.js',
+315 silly resolved     _id: 'charenc@0.0.1',
+315 silly resolved     dist: { shasum: '73c79df1c028f51b74a2031931295be3c1c98830' },
+315 silly resolved     _from: 'charenc@~0.0.1',
+315 silly resolved     _resolved: 'https://registry.npmjs.org/charenc/-/charenc-0.0.1.tgz' },
+315 silly resolved   { author:
+315 silly resolved      { name: 'Paul Vorbach',
+315 silly resolved        email: 'paul@vorb.de',
+315 silly resolved        url: 'http://vorb.de' },
+315 silly resolved     name: 'crypt',
+315 silly resolved     description: 'utilities for encryption and hashing',
+315 silly resolved     tags: [ 'hash', 'security' ],
+315 silly resolved     version: '0.0.1',
+315 silly resolved     repository: { type: 'git', url: 'git://github.com/pvorb/node-crypt.git' },
+315 silly resolved     bugs: { url: 'https://github.com/pvorb/node-crypt/issues' },
+315 silly resolved     main: 'crypt.js',
+315 silly resolved     engines: { node: '*' },
+315 silly resolved     readme: '**crypt** provides utilities for encryption and hashing\n',
+315 silly resolved     readmeFilename: 'README.mkd',
+315 silly resolved     _id: 'crypt@0.0.1',
+315 silly resolved     dist: { shasum: '371c1dfbc80c8d1f77faa7e2cf133c4c9696c0c2' },
+315 silly resolved     _from: 'crypt@~0.0.1',
+315 silly resolved     _resolved: 'https://registry.npmjs.org/crypt/-/crypt-0.0.1.tgz' },
+315 silly resolved   { name: 'is-buffer',
+315 silly resolved     description: 'Determine if an object is Buffer',
+315 silly resolved     version: '1.1.3',
+315 silly resolved     author:
+315 silly resolved      { name: 'Feross Aboukhadijeh',
+315 silly resolved        email: 'feross@feross.org',
+315 silly resolved        url: 'http://feross.org/' },
+315 silly resolved     bugs: { url: 'https://github.com/feross/is-buffer/issues' },
+315 silly resolved     dependencies: {},
+315 silly resolved     devDependencies: { standard: '^6.0.5', tape: '^4.0.0', zuul: '^3.0.0' },
+315 silly resolved     engines: { node: '>=0.12' },
+315 silly resolved     keywords:
+315 silly resolved      [ 'buffer',
+315 silly resolved        'buffers',
+315 silly resolved        'type',
+315 silly resolved        'core buffer',
+315 silly resolved        'browser buffer',
+315 silly resolved        'browserify',
+315 silly resolved        'typed array',
+315 silly resolved        'uint32array',
+315 silly resolved        'int16array',
+315 silly resolved        'int32array',
+315 silly resolved        'float32array',
+315 silly resolved        'float64array',
+315 silly resolved        'browser',
+315 silly resolved        'arraybuffer',
+315 silly resolved        'dataview' ],
+315 silly resolved     license: 'MIT',
+315 silly resolved     main: 'index.js',
+315 silly resolved     repository: { type: 'git', url: 'git://github.com/feross/is-buffer.git' },
+315 silly resolved     scripts:
+315 silly resolved      { test: 'standard && npm run test-node && npm run test-browser',
+315 silly resolved        'test-browser': 'zuul -- test/*.js',
+315 silly resolved        'test-browser-local': 'zuul --local -- test/*.js',
+315 silly resolved        'test-node': 'tape test/*.js' },
+315 silly resolved     testling: { files: 'test/*.js' },
+315 silly resolved     readme: '# is-buffer [![travis][travis-image]][travis-url] [![npm][npm-image]][npm-url] [![downloads][downloads-image]][npm-url]\n\n#### Determine if an object is a [`Buffer`](http://nodejs.org/api/buffer.html) (incl. [browser Buffers](https://github.com/feross/buffer))\n\n[![saucelabs][saucelabs-image]][saucelabs-url]\n\n[travis-image]: https://img.shields.io/travis/feross/is-buffer/master.svg\n[travis-url]: https://travis-ci.org/feross/is-buffer\n[npm-image]: https://img.shields.io/npm/v/is-buffer.svg\n[npm-url]: https://npmjs.org/package/is-buffer\n[downloads-image]: https://img.shields.io/npm/dm/is-buffer.svg\n[saucelabs-image]: https://saucelabs.com/browser-matrix/is-buffer.svg\n[saucelabs-url]: https://saucelabs.com/u/is-buffer\n\n## Why not use `Buffer.isBuffer`?\n\nThis module lets you check if an object is a `Buffer` without using `Buffer.isBuffer` (which includes the whole [buffer](https://github.com/feross/buffer) module in [browserify](http://browserify.org/)).\n\nIt\'s future-proof and works in node too!\n\n## install\n\n```bash\nnpm install is-buffer\n```\n\n## usage\n\n```js\nvar isBuffer = require(\'is-buffer\')\n\nisBuffer(new Buffer(4)) // true\n\nisBuffer(undefined) // false\nisBuffer(null) // false\nisBuffer(\'\') // false\nisBuffer(true) // false\nisBuffer(false) // false\nisBuffer(0) // false\nisBuffer(1) // false\nisBuffer(1.0) // false\nisBuffer(\'string\') // false\nisBuffer({}) // false\nisBuffer(function foo () {}) // false\n```\n\n## license\n\nMIT. Copyright (C) [Feross Aboukhadijeh](http://feross.org).\n',
+315 silly resolved     readmeFilename: 'README.md',
+315 silly resolved     _id: 'is-buffer@1.1.3',
+315 silly resolved     _from: 'is-buffer@~1.1.1' } ]
+316 info install charenc@0.0.1 into /home/hydrogen/node_modules/md5
+317 info install crypt@0.0.1 into /home/hydrogen/node_modules/md5
+318 info install is-buffer@1.1.3 into /home/hydrogen/node_modules/md5
+319 info installOne charenc@0.0.1
+320 info installOne crypt@0.0.1
+321 info installOne is-buffer@1.1.3
+322 warn engine is-buffer@1.1.3: wanted: {"node":">=0.12"} (current: {"node":"v0.10.25","npm":"1.3.10"})
+323 info /home/hydrogen/node_modules/md5/node_modules/charenc unbuild
+324 info /home/hydrogen/node_modules/md5/node_modules/crypt unbuild
+325 info /home/hydrogen/node_modules/md5/node_modules/is-buffer unbuild
+326 verbose tar unpack /home/hydrogen/.npm/charenc/0.0.1/package.tgz
+327 silly lockFile ea02e3a2-modules-md5-node-modules-charenc tar:///home/hydrogen/node_modules/md5/node_modules/charenc
+328 verbose lock tar:///home/hydrogen/node_modules/md5/node_modules/charenc /home/hydrogen/.npm/ea02e3a2-modules-md5-node-modules-charenc.lock
+329 silly lockFile be0c7342-en-npm-charenc-0-0-1-package-tgz tar:///home/hydrogen/.npm/charenc/0.0.1/package.tgz
+330 verbose lock tar:///home/hydrogen/.npm/charenc/0.0.1/package.tgz /home/hydrogen/.npm/be0c7342-en-npm-charenc-0-0-1-package-tgz.lock
+331 verbose tar unpack /home/hydrogen/.npm/crypt/0.0.1/package.tgz
+332 silly lockFile f838c1d2-e-modules-md5-node-modules-crypt tar:///home/hydrogen/node_modules/md5/node_modules/crypt
+333 verbose lock tar:///home/hydrogen/node_modules/md5/node_modules/crypt /home/hydrogen/.npm/f838c1d2-e-modules-md5-node-modules-crypt.lock
+334 silly lockFile d4dd2387-ogen-npm-crypt-0-0-1-package-tgz tar:///home/hydrogen/.npm/crypt/0.0.1/package.tgz
+335 verbose lock tar:///home/hydrogen/.npm/crypt/0.0.1/package.tgz /home/hydrogen/.npm/d4dd2387-ogen-npm-crypt-0-0-1-package-tgz.lock
+336 verbose tar unpack /home/hydrogen/.npm/is-buffer/1.1.3/package.tgz
+337 silly lockFile 381e364a-dules-md5-node-modules-is-buffer tar:///home/hydrogen/node_modules/md5/node_modules/is-buffer
+338 verbose lock tar:///home/hydrogen/node_modules/md5/node_modules/is-buffer /home/hydrogen/.npm/381e364a-dules-md5-node-modules-is-buffer.lock
+339 silly lockFile 13f25bd4--npm-is-buffer-1-1-3-package-tgz tar:///home/hydrogen/.npm/is-buffer/1.1.3/package.tgz
+340 verbose lock tar:///home/hydrogen/.npm/is-buffer/1.1.3/package.tgz /home/hydrogen/.npm/13f25bd4--npm-is-buffer-1-1-3-package-tgz.lock
+341 silly gunzTarPerm modes [ '755', '644' ]
+342 silly gunzTarPerm modes [ '755', '644' ]
+343 silly gunzTarPerm modes [ '755', '644' ]
+344 silly gunzTarPerm extractEntry package.json
+345 silly gunzTarPerm extractEntry package.json
+346 silly gunzTarPerm extractEntry package.json
+347 silly gunzTarPerm extractEntry README.js
+348 silly gunzTarPerm extractEntry charenc.js
+349 silly gunzTarPerm extractEntry crypt.js
+350 silly gunzTarPerm extractEntry LICENSE.mkd
+351 silly gunzTarPerm extractEntry README.md
+352 silly gunzTarPerm extractEntry LICENSE
+353 silly gunzTarPerm extractEntry LICENSE.mkd
+354 silly gunzTarPerm extractEntry README.mkd
+355 silly gunzTarPerm extractEntry index.js
+356 silly gunzTarPerm extractEntry .travis.yml
+357 silly gunzTarPerm extractEntry .zuul.yml
+358 silly gunzTarPerm extractEntry test/basic.js
+359 silly lockFile ea02e3a2-modules-md5-node-modules-charenc tar:///home/hydrogen/node_modules/md5/node_modules/charenc
+360 silly lockFile ea02e3a2-modules-md5-node-modules-charenc tar:///home/hydrogen/node_modules/md5/node_modules/charenc
+361 silly lockFile be0c7342-en-npm-charenc-0-0-1-package-tgz tar:///home/hydrogen/.npm/charenc/0.0.1/package.tgz
+362 silly lockFile be0c7342-en-npm-charenc-0-0-1-package-tgz tar:///home/hydrogen/.npm/charenc/0.0.1/package.tgz
+363 silly lockFile f838c1d2-e-modules-md5-node-modules-crypt tar:///home/hydrogen/node_modules/md5/node_modules/crypt
+364 silly lockFile f838c1d2-e-modules-md5-node-modules-crypt tar:///home/hydrogen/node_modules/md5/node_modules/crypt
+365 info preinstall charenc@0.0.1
+366 silly lockFile d4dd2387-ogen-npm-crypt-0-0-1-package-tgz tar:///home/hydrogen/.npm/crypt/0.0.1/package.tgz
+367 silly lockFile d4dd2387-ogen-npm-crypt-0-0-1-package-tgz tar:///home/hydrogen/.npm/crypt/0.0.1/package.tgz
+368 verbose readDependencies using package.json deps
+369 verbose readDependencies using package.json deps
+370 silly resolved []
+371 verbose about to build /home/hydrogen/node_modules/md5/node_modules/charenc
+372 info build /home/hydrogen/node_modules/md5/node_modules/charenc
+373 verbose linkStuff [ false,
+373 verbose linkStuff   false,
+373 verbose linkStuff   false,
+373 verbose linkStuff   '/home/hydrogen/node_modules/md5/node_modules' ]
+374 info linkStuff charenc@0.0.1
+375 info preinstall crypt@0.0.1
+376 verbose linkBins charenc@0.0.1
+377 verbose linkMans charenc@0.0.1
+378 verbose rebuildBundles charenc@0.0.1
+379 info install charenc@0.0.1
+380 verbose readDependencies using package.json deps
+381 verbose readDependencies using package.json deps
+382 silly resolved []
+383 verbose about to build /home/hydrogen/node_modules/md5/node_modules/crypt
+384 info build /home/hydrogen/node_modules/md5/node_modules/crypt
+385 verbose linkStuff [ false,
+385 verbose linkStuff   false,
+385 verbose linkStuff   false,
+385 verbose linkStuff   '/home/hydrogen/node_modules/md5/node_modules' ]
+386 info linkStuff crypt@0.0.1
+387 info postinstall charenc@0.0.1
+388 verbose linkBins crypt@0.0.1
+389 verbose linkMans crypt@0.0.1
+390 verbose rebuildBundles crypt@0.0.1
+391 info install crypt@0.0.1
+392 info postinstall crypt@0.0.1
+393 silly lockFile 381e364a-dules-md5-node-modules-is-buffer tar:///home/hydrogen/node_modules/md5/node_modules/is-buffer
+394 silly lockFile 381e364a-dules-md5-node-modules-is-buffer tar:///home/hydrogen/node_modules/md5/node_modules/is-buffer
+395 silly lockFile 13f25bd4--npm-is-buffer-1-1-3-package-tgz tar:///home/hydrogen/.npm/is-buffer/1.1.3/package.tgz
+396 silly lockFile 13f25bd4--npm-is-buffer-1-1-3-package-tgz tar:///home/hydrogen/.npm/is-buffer/1.1.3/package.tgz
+397 info preinstall is-buffer@1.1.3
+398 verbose readDependencies using package.json deps
+399 verbose readDependencies using package.json deps
+400 silly resolved []
+401 verbose about to build /home/hydrogen/node_modules/md5/node_modules/is-buffer
+402 info build /home/hydrogen/node_modules/md5/node_modules/is-buffer
+403 verbose linkStuff [ false,
+403 verbose linkStuff   false,
+403 verbose linkStuff   false,
+403 verbose linkStuff   '/home/hydrogen/node_modules/md5/node_modules' ]
+404 info linkStuff is-buffer@1.1.3
+405 verbose linkBins is-buffer@1.1.3
+406 verbose linkMans is-buffer@1.1.3
+407 verbose rebuildBundles is-buffer@1.1.3
+408 info install is-buffer@1.1.3
+409 info postinstall is-buffer@1.1.3
+410 verbose about to build /home/hydrogen/node_modules/md5
+411 info build /home/hydrogen/node_modules/md5
+412 verbose linkStuff [ false, false, false, '/home/hydrogen/node_modules' ]
+413 info linkStuff md5@2.1.0
+414 verbose linkBins md5@2.1.0
+415 verbose linkMans md5@2.1.0
+416 verbose rebuildBundles md5@2.1.0
+417 verbose rebuildBundles [ 'charenc', 'crypt', 'is-buffer' ]
+418 info install md5@2.1.0
+419 info postinstall md5@2.1.0
+420 error peerinvalid The package mongodb does not satisfy its siblings' peerDependencies requirements!
+420 error peerinvalid Peer mongoskin@2.0.3 wants mongodb@~2.0
+421 error System Linux 4.2.0-27-generic
+422 error command "/usr/bin/nodejs" "/usr/bin/npm" "install" "md5"
+423 error cwd /home/hydrogen/test/test_connection
+424 error node -v v0.10.25
+425 error npm -v 1.3.10
+426 error code EPEERINVALID
+427 verbose exit [ 1, true ]

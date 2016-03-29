@@ -4,6 +4,7 @@ var bodyParser = require('body-parser');
 var session = require('express-session');
 
 var app = module.exports = express();
+var monitorRoom = require('./danmu').monitorRoom;
 
 //app.use(express.static('public'));
 app.set('view engine','ejs');
@@ -85,6 +86,11 @@ app.get('/login',function(req,res){
 app.get('/rooms',function(req,res){
   console.log('function get rooms');
   res.render('rooms');
+});
+
+app.post('/rooms',function(req,res){
+  console.log('function post roomid: ' + req.body.roomid);
+  monitorRoom(req.body.roomid);
 });
 
 app.post('/login',function(req,res){
