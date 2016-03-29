@@ -28,12 +28,13 @@ function login(socket,roomid,user,password){
 
 function getGroupServer(roomid,callback){
   console.log('function getGroupServer@danmu');
-  request({uri:'http://www.douyutv.com' + roomid},function(err,res,body){
+  request({uri:'http://www.douyutv.com/' + roomid},function(err,res,body){
     console.log('request success.');
-    console.log(body.toString());
+   // console.log(body.toString());
     var server_config = JSON.parse(body.match(/room_args = (.*?)\}\;/g)[0].replace('room_args = ','').replace(';',''));
+   // console.log(server_config);
     server_config = JSON.parse(unescape(server_config['server_config']));
-    callback(serer_config[0].ip,server_config[0].port);
+    callback(server_config[0].ip,server_config[0].port);
   });
 }
 
@@ -53,7 +54,7 @@ function getGroupId(roomid,callback){
     });
 
     socket.on('data',function(data){
-      if(data.indexOf('type@=setmsggroup') >= 0){
+      if(data.toString().indexOf('type@=setmsggroup') >= 0){
 	var gid = data.toString().match(/gid@=(.*?)\//g)[0].replace('gid@=','');
 	gid = gid.substring(0,gid.length - 1);
 	socket.destroy();
@@ -95,7 +96,7 @@ exports.monitorRoom = function(roomid){
       data.toString().indexOf('type@=ranklist') >= 0 ||
       data.toString().indexOf('type@=onlinegift') >= 0){
       //nonsence
-    }else if(data.indexOf('type@=spbc') >= 0){
+    }else if(data.toString().indexOf('type@=spbc') >= 0){
       var drid = data.toString().match(/drid@=(.*?)\//g)[0].replace('drid@=','');
       drid = drid.substring(0,drid.length - 1);
       console.log('rocket! room id:' + drid);
