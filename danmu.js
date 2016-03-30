@@ -9,6 +9,11 @@ var PORT = 8602;
 
 //module.exports = Danmu;
 
+//function content(owner,context){
+//  this.owner = owner;
+//  this.context = context;
+//}
+
 function send(socket,payload){
   var data = new Buffer(4 + 4 + 4 + payload.length + 1);
   data.writeInt32LE(4 + 4 + payload.length + 1,0);
@@ -30,7 +35,10 @@ function getGroupServer(roomid,callback){
   console.log('function getGroupServer@danmu');
   request({uri:'http://www.douyutv.com/' + roomid},function(err,res,body){
     console.log('request success.');
-   // console.log(body.toString());
+    if(err){
+      console.log(err);
+       return;}
+   // console.log(body);
     var server_config = JSON.parse(body.match(/room_args = (.*?)\}\;/g)[0].replace('room_args = ','').replace(';',''));
    // console.log(server_config);
     server_config = JSON.parse(unescape(server_config['server_config']));
@@ -80,21 +88,30 @@ exports.monitorRoom = function(roomid){
 	console.log('gid of room[' + roomid +']');
 	send(socket,'type@=joingroup/rid@=' + roomid + '/gid@=' + gid + '/');
       });
-    }else if(data.toString().indexOf('type@=chatmessage') >= 0){
+    }else if(data.toString().indexOf('type@=chatmsg') >= 0){
       var msg = data.toString();
-      var snick = msg.match(/snick@(.*?)\//g)[0].replace('snick@=','');
-      var content = msg.match(/content@=(.*?)\//g)[0].replace('content@=','');
-      snick = snick.substring(0,snick.length - 1);
-      content = content.substring(0,content.length - 1);
-      console.log(snick + ': ' + content);
-    }else if(data.toString().indexOf('type@=userenter') >= 0 ||
-      data.toString().indexOf('type@=keeplive') >=0 ||
+     // var snick = msg.match(/snick@(.*?)\//g)[0].replace('snick@=','');
+     // var content = msg.match(/content@=(.*?)\//g)[0].replace('content@=','');
+     // snick = snick.substring(0,snick.length - 1);
+     // content = content.substring(0,content.length - 1);
+      var owner = msg.match(/nn@*(.*?)\//g)[0].replace('nn@=','');
+      var context = msg.match(/txt@*(.*?)\//g)[0].replace('txt@=','');
+      owner =  owner.substring(0,owner.length - 1);
+      context =  context.substring(0,context.length - 1);
+      console.log(owner + ': ' + context);
+    }else if(data.toString().indexOf('type@=uenter') >= 0){
+      var msg = data.toString();
+      var user = msg.match(/nn@*(.*?)\//g)[0].replace('nn@=','');
+      user.substring(0,user.length - 1);
+      console.log(user + ' entered room.');
+    }else if(data.toString().indexOf('type@=keeplive') >=0 ||
       data.toString().indexOf('type@dgn=/gid@=131') >= 0 ||
       data.toString().indexOf('type@=blackres') >= 0 ||
       data.toString().indexOf('type@=dgn/gfid@=129') >= 0 ||
       data.toString().indexOf('type@=upgrade') >= 0 ||
       data.toString().indexOf('type@=ranklist') >= 0 ||
-      data.toString().indexOf('type@=onlinegift') >= 0){
+      data.toString().indexOf('type@=onlinegift') >= 0 ||
+      data.toString().indexOf('type@=dgb') >= 0){
       //nonsence
     }else if(data.toString().indexOf('type@=spbc') >= 0){
       var drid = data.toString().match(/drid@=(.*?)\//g)[0].replace('drid@=','');
