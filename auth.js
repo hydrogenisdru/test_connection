@@ -93,6 +93,12 @@ app.post('/rooms',function(req,res){
   monitorRoom(req.body.roomid);
 });
 
+app.get('/show',function(req,res){
+  console.log('function get show');
+  var users = [{name:"tobi",skill:"stealth"},{name:"loki",skill:"smash"}];
+  res.render('users',{users:users,title:"shows"});
+});
+
 app.post('/login',function(req,res){
   authenticate(req.body.username,req.body.password,function(err,user){
     if(user){
