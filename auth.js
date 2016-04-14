@@ -2,6 +2,7 @@ var express = require('express');
 var hash = require('./pass').hash;
 var bodyParser = require('body-parser');
 var session = require('express-session');
+var dao = require('./models/DAO');
 
 var app = module.exports = express();
 var monitorRoom = require('./danmu').monitorRoom;
@@ -99,6 +100,11 @@ app.get('/show',function(req,res){
   res.render('users',{users:users,title:"shows"});
 });
 
+app.get('/reg',function(req,res){
+  console.log('function reg');
+  res.render('regist');
+});
+
 app.post('/login',function(req,res){
   authenticate(req.body.username,req.body.password,function(err,user){
     if(user){
@@ -109,11 +115,41 @@ app.post('/login',function(req,res){
       res.redirect('back');
       });
     }else{
-      req.session.error = 'authenticate failed,please check your ' +
-      'username and password' + '(use "tj " and " foobar")';
+      req.session.error = 'authentication failed! click to <a href="/reg">regist</a>';
       res.redirect('/login');
     }
   });
+});
+
+app.post('/reg',function(req,res){
+  console.log('function reg post');
+  if(req.body.password != req.body.confirmpassword){
+    req.session.error = 'confirm password must be the same as password!';
+    res.redirect('/reg');
+  }else{
+    console.log('user: ' + req.body.username + ' password: ' + req.body.password);
+    hash(req.body.password,function(err,hash){
+      if(err){
+        req.session.error = 'failed to create hash.';
+	res.redirect('/reg');
+      }else{
+	var userInfo = {
+	  name: req.body.username,
+	  password:hash
+	};
+	dao.add(userInfo,function(result){
+	  console.log('add user result:', result);
+	  if(1 == result.result.ok){
+	    req.session.success = 'regist success.click to <a href="/login">Login</a>';
+	    res.redirect('back');
+	  }else{
+	    req.session.error = 'failede to regist!';
+	    res.redirect('/reg');
+	  }
+	});
+      }
+    });
+  }
 });
 
 if(!module.parent){

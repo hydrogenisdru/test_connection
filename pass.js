@@ -11,7 +11,7 @@ var iterations = 12000;
 */
 
 exports.hash = function(pwd,salt,fn){
-  console.log('function hash generate.pwd; %s,salt: %s',pwd,salt);
+  console.log('function hash generate.pwd; %s',pwd);
   if(3 == arguments.length){
     crypto.pbkdf2(pwd,salt,iterations,len,function(err,hash){
       fn(err,hash.toString('base64'));

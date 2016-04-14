@@ -1,0 +1,23 @@
+<% var title = 'Regist' %>
+<% include head %>
+<h1>Regist</h1>
+<%- message %>
+<form method="post" action="/reg">
+<p>
+  <label>User Name:</label></br>
+  <input type="text" name="username">
+</p>
+<p>
+  <label>Password:</lebel></br>
+  <input type="password" name="password">
+</p>
+<p>
+  <label>Confirm password:</label></br>
+  <input type="password" name="confirmpassword">
+</p>
+<p>
+  <button type="summit" name="summit">summit</button>
+</p>
+</form>
+
+<% include foot %>
