@@ -100,11 +100,6 @@ app.get('/show',function(req,res){
   res.render('users',{users:users,title:"shows"});
 });
 
-app.get('/reg',function(req,res){
-  console.log('function reg');
-  res.render('regist');
-});
-
 app.post('/login',function(req,res){
   authenticate(req.body.username,req.body.password,function(err,user){
     if(user){
@@ -119,6 +114,11 @@ app.post('/login',function(req,res){
       res.redirect('/login');
     }
   });
+});
+
+app.get('/reg',function(req,res){
+  console.log('function reg');
+  res.render('regist');
 });
 
 app.post('/reg',function(req,res){
@@ -137,19 +137,38 @@ app.post('/reg',function(req,res){
 	  name: req.body.username,
 	  password:hash
 	};
-	dao.add(userInfo,function(result){
+	dao.add(userInfo,function(err,result){
 	  console.log('add user result:', result);
-	  if(1 == result.result.ok){
+	  if(!err){
 	    req.session.success = 'regist success.click to <a href="/login">Login</a>';
 	    res.redirect('back');
 	  }else{
-	    req.session.error = 'failede to regist!';
+	    req.session.error = 'failed to regist!';
 	    res.redirect('/reg');
 	  }
 	});
       }
     });
   }
+});
+
+app.get('/remove',function(req,res){
+  console.log('function get remove');
+  res.render('removeUser');
+});
+
+app.post('/remove',function(req,res){
+  console.log('function post remove');
+  dao.remove(req.body.username,function(err,result){
+    console.log('remove user:' + req.body.username + ' result:' + result);
+    if(!err){
+      req.session.success = 'remove user success.click to <a href="/regist">Regist</regist>';
+      res.redirect('back');
+    }else{
+      req.session.error = 'failed to remove user.';
+      res.redirect('/remove');
+    }
+  });
 });
 
 if(!module.parent){

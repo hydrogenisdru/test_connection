@@ -1,4 +1,4 @@
-var mongodb = require('./db');
+var pool = require('./pool');
 var Food = {
   name: this.name,
   type: this.type,
@@ -6,103 +6,85 @@ var Food = {
   price: this.price
 };
 
-var insertDoc = function(info,callback,db){
-  if(3 == arguments.length){
+var insertDoc = function(info,callback){
+  pool.acquire(function(err,db){
+    console.log('connect collection@function insert');
+    if(err) callback(err);
     db.collection('mydb',function(err,collection){
       collection.insert(info,function(err,result){
         if(err){
-	  console.log('insert failed.error: ' + err);
+  	  console.log('insert failed.error:' + err);
+	  callback(err,null);
         }else{
-	  callback(result);
+	  callback(null,result);
         }
       });
     });
-  }else{
-    mongodb.collection('mydb',function(err,collection){
-      console.log('connect collection@function insert');
-      
-    });
-  }
+  });
 }
 
-var removeDoc = function(info,callback,db){ 
-  if(3 == arguments.length){
+var removeDoc = function(info,callback){ 
+  pool.acquire(function(err,db){
+    console.log('connect collection@function insert');
+    if(err) callback(err);
     db.collection('mydb',function(err,collection){
-      collection.remove(info,function(err,result){
+      collection.remove({name:info},function(err,result){
         if(err){
-	  console.log('insert failed.error: ' + err);
+  	  console.log('insert failed.error:' + err);
+	  callback(err,null);
         }else{
-	  callback(result);
+	  callback(null,result);
         }
       });
     });
-  }else{
-    mongodb.collection('mydb',function(err,collection){
-      console.log('connect collection@function remove');
-      
+  });
+}
+
+var findDoc = function(info,callback){
+  pool.acquire(function(err,db){
+    console.log('connect collection@function insert');
+    if(err) callback(err,null);
+    db.collection('mydb',function(err,collection){
+      collection.find({name:info}).toArray(function(err,docs){
+        if(err){
+  	  console.log('insert failed.error:' + err);
+	  callback(err,null);
+        }else{
+	  callback(null,docs);
+        }
+      });
     });
-  }
-}
-
-exports.setDb = function(ipAddr,dbName){
-  
-}
-
-exports.close = function(){
-  mongodb.close();
+  });
 }
 
 exports.add = function(user,callback){
-  if(!mongodb.openCalled){
-    mongodb.open(function(err,db){
-      console.log('function db open');
-      if(err) return callback(err);
-      insertDoc(user,function(result){
-	//console.log('insert result: %s',result);
-	callback(result);
-      },db); 
-    });
-  }else{   
-    insertDoc(user,function(result){
-      //console.log('insert result: ' + result);
-      callback(result);
-    });
-  }
+  insertDoc(user,function(err,result){
+    callback(err,result);
+  });
 }
 
 exports.remove = function(user,callback){
-  if(!mongodb.openCalled){
-    mongodb.open(function(err,db){
-      console.log('function db open');
-      if(err) return callback(err);
-      removeDoc(user,function(result){
-	//console.log('remove result: ' + result);
-	callback(result);
-      },db); 
-    });
-  }else{   
-    removeDoc(user,function(result){
-      //console.log('remove result: ' + result);
-      callback(result);
-    });
-  }
+  removeDoc(user,function(err,result){
+    callback(err,result);
+  }); 
 }
 
 exports.find = function(userInfo,callback){
-
+  findDoc(user,function(err,result){
+    callback(err,result);
+  }); 
 }
-
 
 exports.modify = function(user){
   
 }
-//mongodb.open(function(err,db){
+//pool.open(function(err,db){
 //  console.log('function db open');
 //  if(err) return callback(err);
 //  db.collection('mydb',function(err,collection){
 //    console.log('function collection in');
 //    if(err){
-//       mongodb.close();
+//       pool.close();
 //       return callback(err);
 //    }else{
 //      collection.find({name : 'fish'}).toArray(function(err,docs){
