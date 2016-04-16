@@ -38,10 +38,14 @@ function getGroupServer(roomid,callback){
     if(err){
       console.log(err);
        return;}
-   // console.log(body);
-    var server_config = JSON.parse(body.match(/room_args = (.*?)\}\;/g)[0].replace('room_args = ','').replace(';',''));
+  // console.log(body);
+    var server_config = JSON.parse(decodeURIComponent(JSON.parse(body.match(/"server_config":(.*?)\,/g)[0].replace('"server_config":','').replace(',',''))));
+     console.log(server_config);  
+// var server_config = JSON.parse(body.match(/room_args = (.*?)\}\;/g)[0].replace('room_args = ','').replace(';',''));
    // console.log(server_config);
-    server_config = JSON.parse(unescape(server_config['server_config']));
+   // server_config = JSON.parse(unescape(server_config['server_config']));
+    //server_config = JSON.parse(decodeURIComponent(server_config));
+    console.log(server_config);
     callback(server_config[0].ip,server_config[0].port);
   });
 }

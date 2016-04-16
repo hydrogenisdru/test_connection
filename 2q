@@ -1,0 +1,26 @@
+var events = require('events');
+var util = require('util');
+
+function Mystream(){
+  events.Eventemitter.call(this);
+}
+
+util.inherits(Mystream,events.Eventemitter);
+
+Mystream.prototype.write = function(data){
+  this.emit("data",data);
+}
+
+var stream = new Mystream();
+
+var cnt = 0;
+
+SetInterval(function(){
+  stream.write(cnt++);
+},5000);
+
+stream.on("data",function(data){
+  console.log('Received: "' + data + '"');
+});
+
+console.log('last line.');

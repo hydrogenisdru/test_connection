@@ -92,6 +92,7 @@ app.get('/rooms',function(req,res){
 app.post('/rooms',function(req,res){
   console.log('function post roomid: ' + req.body.roomid);
   monitorRoom(req.body.roomid);
+  res.redirect('show');
 });
 
 app.get('/show',function(req,res){
