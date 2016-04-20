@@ -3,12 +3,15 @@ var hash = require('./pass').hash;
 var bodyParser = require('body-parser');
 var session = require('express-session');
 var dao = require('./models/DAO');
-
 var app = module.exports = express();
 var monitorRoom = require('./danmu').monitorRoom;
-
+//var http = module.exports = require('http').Server(app);
+var ws = require('./test_websocket');
 //app.use(express.static('public'));
-app.set('view engine','ejs');
+//app.set('view engine','ejs');
+app.use(express.static('public'));
+app.engine('html',require('ejs').__express);
+app.set('view engine','html');
 app.set('views',__dirname + '/views');
 
 app.use(bodyParser.urlencoded({extended:false}));
@@ -91,8 +94,8 @@ app.get('/rooms',function(req,res){
 
 app.post('/rooms',function(req,res){
   console.log('function post roomid: ' + req.body.roomid);
-  monitorRoom(req.body.roomid);
-  res.redirect('show');
+ // monitorRoom(req.body.roomid);
+  res.render('webClient');
 });
 
 app.get('/show',function(req,res){
@@ -173,6 +176,9 @@ app.post('/remove',function(req,res){
 });
 
 if(!module.parent){
-  app.listen(3000);
+  var server = app.listen(3000);
+  //http.listen(3000);
+  var websocket = new ws(server);
+  websocket.on();
   console.log('Express is running at port 3000.');
 }

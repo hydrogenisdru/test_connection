@@ -1,0 +1,9 @@
+<% include header.html %>
+<h1>Users</h1>
+<ul id="users">
+<% users.forEach(function(user){ %>
+<li><%= 'name: ' + user.name %></li>
+<li><%= 'skill: ' + user.skill %></li>
+<% }) %>
+</ul>
+<% include footer.html %>

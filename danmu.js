@@ -3,7 +3,6 @@ var uuid = require('node-uuid');
 var md5 = require('md5');
 var request = require('request');
 var HOST = '125.88.176.8';
-//var HOST = '115.231.96.20';
 var PORT = 8602;
 
 //function Danmu(){}
@@ -40,10 +39,8 @@ function getGroupServer(roomid,callback){
       console.log(err);
        return;}
   // console.log(body);
-    var roomid_in_res = body.match(/"room_id":(.*?)\,/g)[0].replace('"room_id":','').replace(',','');
-    console.log(roomid_in_res);
     var server_config = JSON.parse(decodeURIComponent(JSON.parse(body.match(/"server_config":(.*?)\,/g)[0].replace('"server_config":','').replace(',',''))));
-    // console.log(server_config);  
+     console.log(server_config);  
 // var server_config = JSON.parse(body.match(/room_args = (.*?)\}\;/g)[0].replace('room_args = ','').replace(';',''));
    // console.log(server_config);
    // server_config = JSON.parse(unescape(server_config['server_config']));
@@ -65,10 +62,6 @@ function getGroupId(roomid,callback){
   getGroupServer(roomid,function(server,port){
     console.log('group server: ' + server + ': ' + port);
     var socket = net.connect(port,server,function(){
-     // var req = 'type@=loginreq/username@=/password@=/roomid@=' +
-     // roomid + '/ct@=0/vk@=' + vk + '/devid@=' + devid + '/rt@=' + 
-     // rt + '/ver@=20150929/';
-      console.log(req);
       send(socket,req);
     });
 
@@ -79,7 +72,6 @@ function getGroupId(roomid,callback){
 	socket.destroy();
 	callback(gid);
       }
-      console.log(data);
     });
   });
 }
@@ -97,7 +89,7 @@ exports.monitorRoom = function(roomid){
   socket.on('data',function(data){
     if(data.toString().indexOf('type@=loginres') >= 0){
       getGroupId(roomid,function(gid){
-	console.log('gid of room[' + roomid +']' + ' [gid:' + gid + ']');
+	console.log('gid[' + gid + '] of room[' + roomid +']');
 	send(socket,'type@=joingroup/rid@=' + roomid + '/gid@=' + gid + '/');
       });
     }else if(data.toString().indexOf('type@=chatmsg') >= 0){
