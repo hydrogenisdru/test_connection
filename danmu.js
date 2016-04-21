@@ -4,7 +4,7 @@ var md5 = require('md5');
 var request = require('request');
 var HOST = '125.88.176.8';
 var PORT = 8602;
-
+var ws = require('./auth').websocket;
 //function Danmu(){}
 
 //module.exports = Danmu;
@@ -102,6 +102,8 @@ exports.monitorRoom = function(roomid){
       var context = msg.match(/txt@*(.*?)\//g)[0].replace('txt@=','');
       owner =  owner.substring(0,owner.length - 1);
       context =  context.substring(0,context.length - 1);
+      var obj = {username:owner,content:context};
+      ws.send(obj);
       console.log(owner + ': ' + context);
     }else if(data.toString().indexOf('type@=uenter') >= 0){
       var msg = data.toString();

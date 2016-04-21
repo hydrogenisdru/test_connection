@@ -94,7 +94,7 @@ app.get('/rooms',function(req,res){
 
 app.post('/rooms',function(req,res){
   console.log('function post roomid: ' + req.body.roomid);
- // monitorRoom(req.body.roomid);
+  monitorRoom(req.body.roomid);
   res.render('webClient');
 });
 
@@ -178,7 +178,9 @@ app.post('/remove',function(req,res){
 if(!module.parent){
   var server = app.listen(3000);
   //http.listen(3000);
-  var websocket = new ws(server);
-  websocket.on();
-  console.log('Express is running at port 3000.');
+ console.log('Express is running at port 3000.');
 }
+ 
+var websocket =  new ws(server);
+websocket.on();
+//websocket.send({username:'tobi',content:'12345'}) ;

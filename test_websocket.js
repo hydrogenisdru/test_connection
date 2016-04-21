@@ -9,6 +9,6 @@ module.exports = function(server){
   };
   this.send = function(obj){
     server.emit('message',obj);
-    console.log('send message.');
+    console.log('send message. owner: ' + obj.username + ' content: ' + obj.content);
   };
 };
