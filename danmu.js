@@ -4,7 +4,6 @@ var md5 = require('md5');
 var request = require('request');
 var HOST = '125.88.176.8';
 var PORT = 8602;
-var ws = require('./auth').websocket;
 //function Danmu(){}
 
 //module.exports = Danmu;
@@ -76,7 +75,7 @@ function getGroupId(roomid,callback){
   });
 }
 
-exports.monitorRoom = function(roomid){
+exports.monitorRoom = function(roomid,callback){
   console.log('function monitorRoom');
   var socket = net.connect(PORT,HOST,function(){
     login(socket,'visitor1234567','1234567890123456');
@@ -102,14 +101,15 @@ exports.monitorRoom = function(roomid){
       var context = msg.match(/txt@*(.*?)\//g)[0].replace('txt@=','');
       owner =  owner.substring(0,owner.length - 1);
       context =  context.substring(0,context.length - 1);
-      var obj = {username:owner,content:context};
-      ws.send(obj);
+      var obj = {username:owner,content:context,type:'msg'};
       console.log(owner + ': ' + context);
+      callback(obj);
     }else if(data.toString().indexOf('type@=uenter') >= 0){
       var msg = data.toString();
       var user = msg.match(/nn@*(.*?)\//g)[0].replace('nn@=','');
-      user.substring(0,user.length - 1);
+      user.substring(0,user.length - 2);
       console.log(user + ' entered room.');
+      callback({username:user,content:'entered room.',type:'system msg'});
     }else if(data.toString().indexOf('type@=keeplive') >=0 ||
       data.toString().indexOf('type@dgn=/gid@=131') >= 0 ||
       data.toString().indexOf('type@=blackres') >= 0 ||
@@ -123,6 +123,7 @@ exports.monitorRoom = function(roomid){
       var drid = data.toString().match(/drid@=(.*?)\//g)[0].replace('drid@=','');
       drid = drid.substring(0,drid.length - 1);
       console.log('rocket! room id:' + drid);
+      callback({username:'room ' + drid,content:'rocket!',type:'system msg'});
     }else{
       console.log(data.toString());
     }

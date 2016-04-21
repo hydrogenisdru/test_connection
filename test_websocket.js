@@ -1,14 +1,15 @@
-var io = require('socket.io');
- 
-module.exports = function(server){
-  this.server = io.listen(server);
-  this.on = function(){
-    server.on('connection',function(socket){
-    console.log('websocket connection on');
-    });
-  };
-  this.send = function(obj){
-    server.emit('message',obj);
-    console.log('send message. owner: ' + obj.username + ' content: ' + obj.content);
-  };
-};
+var io = require('socket.io')();
+
+io.on('connection',function(socket){
+  console.log(socket.id + ': connection');
+  socket.on('message',function(obj){
+    console.log('msg received.')
+  });
+  socket.on('test',function(obj){
+    console.log('test received.');
+  });
+});
+
+exports.listen = function(server){
+  return io.listen(server);
+}

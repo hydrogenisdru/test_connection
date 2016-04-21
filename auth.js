@@ -7,6 +7,8 @@ var app = module.exports = express();
 var monitorRoom = require('./danmu').monitorRoom;
 //var http = module.exports = require('http').Server(app);
 var ws = require('./test_websocket');
+
+
 //app.use(express.static('public'));
 //app.set('view engine','ejs');
 app.use(express.static('public'));
@@ -94,7 +96,11 @@ app.get('/rooms',function(req,res){
 
 app.post('/rooms',function(req,res){
   console.log('function post roomid: ' + req.body.roomid);
-  monitorRoom(req.body.roomid);
+  //setInterval(websocket.send({username:req.body.roomid,content:'123'}),2000);
+  //monitorRoom(req.body.roomid,function(obj){
+    //console.log('owner: ' + obj.username + ' content: ' + obj.content);
+    //websocket.send(obj);
+  //});
   res.render('webClient');
 });
 
@@ -177,10 +183,8 @@ app.post('/remove',function(req,res){
 
 if(!module.parent){
   var server = app.listen(3000);
-  //http.listen(3000);
+  var websocket = ws.listen(server);
+ //http.listen(3000);
  console.log('Express is running at port 3000.');
 }
- 
-var websocket =  new ws(server);
-websocket.on();
 //websocket.send({username:'tobi',content:'12345'}) ;
