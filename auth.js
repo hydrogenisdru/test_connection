@@ -104,7 +104,7 @@ app.post('/rooms',function(req,res){
     });
     //setInterval(socket.emit('welcome',{username:'sytem',conten:'123'}),2000);
   });
-  res.render('webClient'); 
+  res.render('webClient',{roomid:req.body.roomid}); 
   //ws.send('welcome',{username:'system',content:'123'}); 
 });
 

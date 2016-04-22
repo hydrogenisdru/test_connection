@@ -26,11 +26,11 @@
         });
 	this.socket.on('message',function(obj){
           console.log('msg received. owner: ' + obj.username + ' content: ' + obj.content);
-	  var usernameDiv = '<div>' + obj.username + '</div>';
+	  var usernameDiv = '<div color="red">' + obj.username + ':</div>';
 	  var contentDiv = '<span>' + obj.content + '</span>';
 	  var section = d.createElement('section');
 	  section.className = 'user';
-	  section.innerHTML = contentDiv + usernameDiv;
+	  section.innerHTML = usernameDiv + contentDiv;
 	  CHAT.msgObj.appendChild(section);
 	  CHAT.scrollToBottom();
 	});
