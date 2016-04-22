@@ -1,14 +1,19 @@
 var io = require('socket.io')();
 
-io.on('connection',function(socket){
-  console.log(socket.id + ': connection');
-  socket.on('message',function(obj){
-    console.log('msg received.')
+exports.fetchSocket = function(callback){
+  io.on('connection',function(socket){
+    console.log(socket.id + ': connection');
+    callback(socket);
+   // io.emit('welcome',data);
+    //socket.on('message',function(obj){
+     // console.log('msg received.')
+   // });
+    //socket.on('test',function(obj){
+    //  console.log('test received.');
+    //  setInterval(io.emit('welcome',{username:'system',content:'test received'}),2000);
+    //});
   });
-  socket.on('test',function(obj){
-    console.log('test received.');
-  });
-});
+}
 
 exports.listen = function(server){
   return io.listen(server);

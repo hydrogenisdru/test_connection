@@ -97,11 +97,15 @@ app.get('/rooms',function(req,res){
 app.post('/rooms',function(req,res){
   console.log('function post roomid: ' + req.body.roomid);
   //setInterval(websocket.send({username:req.body.roomid,content:'123'}),2000);
-  //monitorRoom(req.body.roomid,function(obj){
-    //console.log('owner: ' + obj.username + ' content: ' + obj.content);
-    //websocket.send(obj);
-  //});
-  res.render('webClient');
+  ws.fetchSocket(function(socket){
+    monitorRoom(req.body.roomid,function(obj){
+      console.log('owner: ' + obj.username + ' content: ' + obj.content);
+      socket.emit('message',obj);
+    });
+    //setInterval(socket.emit('welcome',{username:'sytem',conten:'123'}),2000);
+  });
+  res.render('webClient'); 
+  //ws.send('welcome',{username:'system',content:'123'}); 
 });
 
 app.get('/show',function(req,res){
@@ -184,7 +188,7 @@ app.post('/remove',function(req,res){
 if(!module.parent){
   var server = app.listen(3000);
   var websocket = ws.listen(server);
- //http.listen(3000);
- console.log('Express is running at port 3000.');
+  //http.listen(3000);
+  console.log('Express is running at port 3000.');
 }
 //websocket.send({username:'tobi',content:'12345'}) ;

@@ -17,7 +17,8 @@
     },
     init:function(){
         console.log('function init');
-	this.socket = io.connect('ws://192.168.11.109:3000');
+	//this.socket = io.connect('ws://192.168.11.109:3000');
+        this.socket = io.connect('ws://172.20.10.5:3000');
         this.socket.emit('test',{username:'client',content:'test'});
         console.log('emit');
         this.socket.on('welcome',function(obj){
@@ -25,8 +26,8 @@
         });
 	this.socket.on('message',function(obj){
           console.log('msg received. owner: ' + obj.username + ' content: ' + obj.content);
-	  var usernameDiv = '<span>' + obj.username + '</span>';
-	  var contentDiv = '<div>' + obj.content + '</div>';
+	  var usernameDiv = '<div>' + obj.username + '</div>';
+	  var contentDiv = '<span>' + obj.content + '</span>';
 	  var section = d.createElement('section');
 	  section.className = 'user';
 	  section.innerHTML = contentDiv + usernameDiv;
