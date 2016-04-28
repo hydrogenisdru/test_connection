@@ -25,12 +25,12 @@ var insertDoc = function(info,callback){
 
 var removeDoc = function(info,callback){ 
   pool.acquire(function(err,db){
-    console.log('connect collection@function insert');
+    console.log('connect collection@function remove');
     if(err) callback(err);
     db.collection('mydb',function(err,collection){
       collection.remove({name:info},function(err,result){
         if(err){
-  	  console.log('insert failed.error:' + err);
+  	  console.log('remove failed.error:' + err);
 	  callback(err,null);
         }else{
 	  callback(null,result);
@@ -42,12 +42,12 @@ var removeDoc = function(info,callback){
 
 var findDoc = function(info,callback){
   pool.acquire(function(err,db){
-    console.log('connect collection@function insert');
+    console.log('connect collection@function find');
     if(err) callback(err,null);
     db.collection('mydb',function(err,collection){
       collection.find({name:info}).toArray(function(err,docs){
         if(err){
-  	  console.log('insert failed.error:' + err);
+  	  console.log('find failed.error:' + err);
 	  callback(err,null);
         }else{
 	  callback(null,docs);
@@ -69,7 +69,7 @@ exports.remove = function(user,callback){
   }); 
 }
 
-exports.find = function(userInfo,callback){
+exports.find = function(user,callback){
   findDoc(user,function(err,result){
     callback(err,result);
   }); 

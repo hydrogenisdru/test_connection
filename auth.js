@@ -49,14 +49,20 @@ hash('foobar',function(err,salt,hash){
 function authenticate(name,pass,fn){
   console.log('function authenticate name: %s,pass: %s',name,pass);
   if(!module.parent) console.log('authenticating %s:%s',name,pass);
-  var user = users[name];
-  if(!user) return fn(new Error('cannot find user'));
-
-  hash(pass,user.salt,function(err,hash){
-    if(err) return fn(err);
-    if(hash == user.hash) return fn(null,user);
-    fn(new Error('invalid password'));
+  //var user = users[name];
+  dao.find(name,function(err,docs){
+    if(err) return fn(new Error(err));
+    var user = docs[0];
+    console.log('found! user:' + user.name + ' hash:' + user.hash);
+   // hash(pass,user.salt,function(err,hash){
+    hash(pass,user.salt,function(err,hash){
+      if(err) return fn(err);
+      console.log('generated hash:' + hash);
+      if(hash == user.hash) return fn(null,user);
+      fn(new Error('invalid password'));
+    });   
   });
+  //if(!user) return fn(new Error('cannot find user'));
 }
 
 function restrict(req,res,next){
@@ -110,6 +116,9 @@ app.post('/rooms',function(req,res){
 
 app.get('/show',function(req,res){
   console.log('function get show');
+  if(req.session.user){
+    console.log('session: ' + req.session);
+  }
   var users = [{name:"tobi",skill:"stealth"},{name:"loki",skill:"smash"}];
   res.render('users',{users:users,title:"shows"});
 });
@@ -124,7 +133,7 @@ app.post('/login',function(req,res){
       res.redirect('back');
       });
     }else{
-      req.session.error = 'authentication failed! click to <a href="/reg">regist</a>';
+      req.session.error = 'authentication failed!' + err.toString() + '. click to <a href="/reg">regist</a>';
       res.redirect('/login');
     }
   });
@@ -142,14 +151,15 @@ app.post('/reg',function(req,res){
     res.redirect('/reg');
   }else{
     console.log('user: ' + req.body.username + ' password: ' + req.body.password);
-    hash(req.body.password,function(err,hash){
+    hash(req.body.password,function(err,salt,hash){
       if(err){
         req.session.error = 'failed to create hash.';
 	res.redirect('/reg');
       }else{
 	var userInfo = {
 	  name: req.body.username,
-	  password:hash
+	  salt: salt,
+	  hash: hash
 	};
 	dao.add(userInfo,function(err,result){
 	  console.log('add user result:', result);
